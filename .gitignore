@@ -1,24 +1,8 @@
-# Python
 .venv/
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
-
-# Env & secrets
 .env
 *.env
-
-# OS/editor
 .DS_Store
-
-# Data (adjust as needed)
 data/*.csv
-data/*.parquet
-.venv/
-__pycache__/
-*.pyc
-.DS_Store
-.env
-.ipynb_checkpoints/
-data/*.csv
-
