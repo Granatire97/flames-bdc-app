@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>BDC Hockey Explorer - Flames Challenge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="center-container">
+      <h1>Calgary Flames Data Challenge</h1>
+      <div class="button-group">
+        <form action="{{ url_for('coach') }}" method="post">
+          <button type="submit">Coaches Enter Here</button>
+      </div>
+    </div>
+  </body>
+</html>

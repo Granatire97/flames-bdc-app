@@ -1,0 +1,143 @@
+body,
+html {
+  height: 100%; /* Ensure body and html take full viewport height */
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(180deg, #b31c1c, #0a0a0a);
+}
+
+.center-container {
+  display: flex;
+  flex-direction: column; /* stack items vertically */
+  align-items: center; /* center horizontally */
+  justify-content: flex-start; /* keep content at the top, not vertically centered */
+  min-height: 80vh; /* optional, for full-page background */
+  padding-top: 120px; /* adds space from top of page */
+}
+
+h1 {
+  /* Optional: Add styling to the h1 itself */
+  font-size: 3em;
+  color: #f6f8fa;
+  padding-left: 10px;
+}
+h2 {
+  /* Optional: Add styling to the h1 itself */
+  font-size: 2em;
+  color: #f6f8fa;
+  padding-left: 10px;
+}
+h3 {
+  /* Optional: Add styling to the h1 itself */
+  font-size: 1em;
+  color: #f6f8fa;
+  padding-left: 10px;
+}
+
+/* Buttons row directly under the title */
+.button-group {
+  display: flex;
+  gap: 12px; /* space between buttons */
+  flex-wrap: wrap; /* wrap on small screens */
+  margin-top: 8px;
+}
+
+/* Forms inside the flex row */
+.button-group form {
+  margin: 0; /* remove default margins */
+}
+
+/* Button styling (optional) */
+.button-group button {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid #d0d7de;
+  background: #f6f8fa;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.button-group button:hover {
+  background: #eaeef2;
+}
+/* Select */
+.select {
+  position: relative;
+  display: grid;
+  align-items: center;
+}
+.select select {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  padding: 14px 44px 14px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: var(--select-bg);
+  color: var(--text);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    transform 0.06s ease;
+}
+.select select:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+.select select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(246, 179, 60, 0.25);
+}
+.select__chevron {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: #e8e9ed;
+  opacity: 0.9;
+  pointer-events: none;
+  background: conic-gradient(
+      from 135deg at 50% 45%,
+      transparent 0 25%,
+      currentColor 0 75%,
+      transparent 0
+    )
+    no-repeat center/70% 70%;
+}
+/* Glass cards */
+.glass {
+  background: linear-gradient(
+    180deg,
+    var(--glass) 0%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+}
+.card {
+  padding: 24px clamp(18px, 3vw, 28px);
+}
+.card__title {
+  margin: 6px 0 18px;
+  font-weight: 800;
+  font-size: clamp(20px, 2.8vw, 28px);
+}
+.panel {
+  min-height: 320px;
+  padding: 18px;
+}
+
+/* Form */
+.form {
+  display: grid;
+  gap: 18px;
+}
+.field {
+  display: grid;
+  gap: 10px;
+}
+.label {
+  font-weight: 600;
+}

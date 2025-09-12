@@ -1,0 +1,6 @@
+Collecting Flask
+  Using cached flask-3.1.2-py3-none-any.whl (103 kB)
+Requirement already satisfied: gunicorn in ./.venv/lib/python3.11/site-packages (23.0.0)
+Requirement already satisfied: pandas in ./.venv/lib/python3.11/site-packages (2.3.2)
+Requirement already satisfied: numpy in ./.venv/lib/python3.11/site-packages (2.3.2)
+Requirement already satisfied: plotly in ./.venv/lib/python3.11/site-packages (6.3.0)
