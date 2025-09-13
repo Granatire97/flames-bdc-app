@@ -92,7 +92,7 @@
             <div class="row g-3">
                 <!-- Teams -->
                 <div class="col-12 col-md-4">
-                  <label for="gametype" class="form-label fw-semibold">Game Type</label>
+                  <label for="gametype" class="form-label fw-semibold">Game Type*</label>
                   <select id="gametype" name="gametype" class="form-select">
                     <option value="">All Game Types</option>
                     {% for gametype in game_type_list %}
@@ -130,9 +130,9 @@
               </div>
 
               <!-- Zones -->
-              <div class="col-12 col-md-4">
-                <label for="zone" class="form-label fw-semibold">Zones (Only For Faceoffs)</label>
-                <select id="zone" name="zone" class="form-select">
+              <div class="col-12 col-md-4" id="zone-group">
+                <label for="zone" class="form-label fw-semibold">Zones ('Faceoff Win' event enables)</label>
+                <select id="zone" name="zone" class="form-select" disabled>
                   <option value="">All Zones</option>
                   {% for zone in zone_list %}
                   <option value="{{ zone }}" {% if zone == selected_zone %}selected{% endif %}>
@@ -233,11 +233,29 @@
     <!-- Bootstrap JS (for navbar toggler, etc.) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // whenever any Bootstrap tab becomes visible, poke Plotly to resize
-        document.addEventListener('shown.bs.tab', function () {
-          window.dispatchEvent(new Event('resize'));
-        }, true);
-      </script>
+        document.addEventListener("DOMContentLoaded", function () {
+      const eventSel = document.getElementById("event");
+      const zoneSel  = document.getElementById("zone");
+
+      function toggleZone() {
+        const isFaceoff = eventSel.value.includes("Faceoff");
+        zoneSel.disabled = !isFaceoff;
+        if (!isFaceoff) {
+          zoneSel.value = ""; // clear stale selection
+      }
+    }
+
+      // run once on page load
+      toggleZone();
+      // run whenever the user changes Events
+      eventSel.addEventListener("change", toggleZone);
+      });
+    
+      // Keep your Plotly resize on tab switch
+      document.addEventListener('shown.bs.tab', function () {
+        window.dispatchEvent(new Event('resize'));
+      }, true);
+    </script>
       
   </body>
 </html>

@@ -86,7 +86,7 @@ def coach():
             return redirect(url_for('coach_gametype_team_event', selected_gametype=selected_gametype, selected_team=selected_team, selected_event=selected_event))
         if selected_gametype and selected_team and selected_event and selected_zone:
             return redirect(url_for('coach_gametype_team_event_zone', selected_gametype=selected_gametype, selected_team=selected_team, selected_event=selected_event, selected_zone=selected_zone))
-        
+    
     else:
         selected_gametype = request.args.get('gametype', '')
         selected_team   = request.args.get('team', '')
