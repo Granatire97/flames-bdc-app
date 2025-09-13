@@ -12,6 +12,7 @@ A lightweight Flask web app for exploring Stathletes’ Big Data Cup women’s h
 - [Project Structure](#project-structure)
 - [Setup (Local)](#setup-local)
 - [Usage](#usage)
+- [How To](#how-to)
 - [Data](#data)
 - [Development Notes](#development-notes)
 - [Roadmap / Ideas](#roadmap--ideas)
@@ -85,11 +86,22 @@ python app.py
   - Select Team, Event, and/or Player, then submit.
   - Visuals are Plotly—use the toolbar to pan/zoom/save PNG.
   - Some panels display static placeholders if a chart isn’t available yet.
+ 
+## How To
+- Once you click the 'Coaches Enter Here' button
+- User will go to Coach view: /coach
+- User will see an introduction page that allows them to select from different filters
+- User will need to select the Game Type (Olympics, US/Canada Rivalry, IIHF World Championships)
+    - Note: Not every team is in each game type
+        - If not, please reset filters
+- User will see visuals that correspond to the filters
+    - There is a chance the user will see either a static placeholder or an empty chart
+        - If so, please reset filters
 
 ## Data
-This app is designed around the Big Data Cup (Stathletes) women’s hockey datasets (e.g., NWHL/NCAA/Olympics CSVs).
-Place the CSVs under data/files/ and point the app to the correct file(s) in app.py (examples: hackathon_nwhl.csv, olympic_womens_dataset.csv).
-👉 Original dataset & documentation: Big Data Cup 2021 (Stathletes) - https://github.com/bigdatacup/Big-Data-Cup-2021
+- This app is designed around the Big Data Cup (Stathletes) women’s hockey datasets (e.g., NWHL/NCAA/Olympics CSVs).
+- Place the CSVs under data/files/ and point the app to the correct file(s) in app.py (examples: hackathon_nwhl.csv, olympic_womens_dataset.csv).
+- Original dataset & documentation: Big Data Cup 2021 (Stathletes) - https://github.com/bigdatacup/Big-Data-Cup-2021
 
 ## Development Notes
 - Templates: Jinja2/JS/HTML (templates/) with Bootstrap 5 for layout/components.
